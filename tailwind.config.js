@@ -25,12 +25,12 @@ export default {
           "green": "#E73D1C",
           "red": "#4DAF6E"
         } 
+      },
+      fontFamily: {
+        body: ['Inter'],
+        poppins: ['poppins'],
       }
     },
-    fontFamily: {
-      body: ['Inter'],
-      poppins: ['poppins'],
-    }
   },
   plugins: [],
 }
