@@ -1,9 +1,7 @@
+import Logo from "../Elements/Logo";
 
-import React from 'react'
-import Logo from '../Elements/Logo/Index'
-import FormSignLn from '../Fragments/FormSignIn'
-
-function AuthLayout() {
+const Authlayout = (props) => {
+    const {children} = props;
   return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
       {/* container start */}
@@ -12,8 +10,7 @@ function AuthLayout() {
         <Logo/>
         {/* logo end */}
         {/* form start */}
-        <div className="mt-16">
-          <FormSignLn/>
+        <div className="mt-16">{children}
         </div>
         {/* form end */}
         {/* teks start */}
@@ -99,4 +96,4 @@ function AuthLayout() {
   )
 }
 
-export default AuthLayout
+export default Authlayout

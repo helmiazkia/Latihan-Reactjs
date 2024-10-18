@@ -1,22 +1,33 @@
 import Button from "../Elements/Button";
 import CheckBox from "../Elements/CheckBox";
-import LabeLedInput from "../Elements/LabeledInput/Index";
+import LabeledInput from "../Elements/LabeledInput";
 
-const FormSignLn = () => {
-    return (
-       <form action="">
-            <div className="mb-6">
-                <LabeLedInput/>
-            </div>
-            <div className="mb-6">
-                <LabeLedInput/>
-            </div>
-            <div className="mb-3">
-                <CheckBox/>
-            </div>
-                <Button/>       
-          </form>
-    );
+const FormSignIn = () => {
+  return (
+    <form action="">
+      <div className="mb-6">
+        <LabeledInput
+          label="Email address"
+          type="email"
+          placeholder="hello@example.com"
+          name="email"
+        />
+      </div>
+      <div className="mb-6">
+        <LabeledInput
+          label="Password"
+          type="password"
+          placeholder="*************"
+          name="password"
+        />
+      </div>
+      <div className="mb-3">
+        <CheckBox label="Keep me signed in" name="status" />
+      </div>
+      <Button variant="bg-primary w-full text-white" type="submit" />
+	      Login
+    </form>
+  );
 };
 
-export default FormSignLn;    
+export default FormSignIn;
