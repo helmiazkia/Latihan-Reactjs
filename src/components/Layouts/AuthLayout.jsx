@@ -86,19 +86,10 @@ const Authlayout = (props) => {
         </div>
         {/* sign in with google end */}
         {/* link start */}
-<div className="flex justify-center">
-  {type == "sign up" ? (
-    <>
-      <span className="text-sm text-gray-03">
-        Already have an account?&nbsp;
-      </span>
-      <a className="text-primary text-sm font-bold">Sign In Here</a>
-    </>
-  ) : (
-    <a className="text-primary text-sm font-bold">Create an account</a>
-  )}
-</div>
-{/* link end */}
+        <div className="flex justify-center">
+          <a className="text-primary text-sm font-bold">Create an account</a>
+        </div>
+        {/* link end */}
       </div>
       {/* container end */}
     </div>
