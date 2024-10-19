@@ -1,6 +1,6 @@
 
 import FormSignIn from "../components/Fragments/FormSignIn";
-import AuthLayout from "../components/Layouts/AuthLayout";
+import AuthLayout from "../components/Layouts/Authlayout";
 
 
 const SignInPage = () => {
