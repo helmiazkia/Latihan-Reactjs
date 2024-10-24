@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
-import Logo from "../Elements/Logo";
+import { Link } from 'react-router-dom';
+import React from 'react'
+import Logo from '../Elements/Logo';
 
-const Authlayout = (props) => {
-    const {children} = props;
+
+const AuthLayout = (props) => {
+  const { children, type } = props;
   return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
       {/* container start */}
@@ -11,8 +13,7 @@ const Authlayout = (props) => {
         <Logo/>
         {/* logo end */}
         {/* form start */}
-        <div className="mt-16">{children}
-        </div>
+        <div className="mt-16">{children}</div>
         {/* form end */}
         {/* teks start */}
         <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
@@ -87,6 +88,7 @@ const Authlayout = (props) => {
         </div>
         {/* sign in with google end */}
         {/* link start */}
+        {/* link start */}
         <div className="flex justify-center">
           {type == "sign up" ? (
             <>
@@ -96,14 +98,16 @@ const Authlayout = (props) => {
               <Link to="/login" className="text-primary text-sm font-bold">Sign In Here</Link>
             </>
           ) : (
-            <Link to="/register" className="text-primary text-sm font-bold">Create an account</Link>
+            <Link to="register" className="text-primary text-sm font-bold">Create an account</Link>
           )}
         </div>
+        {/* link end */}
         {/* link end */}
       </div>
       {/* container end */}
     </div>
-  )
-}
+  );
+};
 
-export default Authlayout;
+
+export default AuthLayout;
