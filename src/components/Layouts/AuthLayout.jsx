@@ -106,4 +106,4 @@ const Authlayout = (props) => {
   )
 }
 
-export default Authlayout
+export default Authlayout;
