@@ -98,7 +98,7 @@ const AuthLayout = (props) => {
               <Link to="/login" className="text-primary text-sm font-bold">Sign In Here</Link>
             </>
           ) : (
-            <Link to="register" className="text-primary text-sm font-bold">Create an account</Link>
+            <Link to="/register" className="text-primary text-sm font-bold">Create an account</Link>
           )}
         </div>
         {/* link end */}
