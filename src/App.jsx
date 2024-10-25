@@ -9,7 +9,7 @@ const App = () => {
     {
       path: "/",
       element: <div>Halaman Utama</div>,
-      errorElement: <ErrorRoute />,
+      errorElement: <ErrorRoute />
     },
     {
       path: "/login",
