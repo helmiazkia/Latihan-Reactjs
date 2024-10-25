@@ -98,14 +98,7 @@ const AuthLayout = (props) => {
               <Link to="/login" className="text-primary text-sm font-bold">Sign In Here</Link>
             </>
           ) : (
-            <>
-            <div className="text-center">
             <Link to="/register" className="text-primary text-sm font-bold">Create an account</Link>
-            <div className="mt-1">
-            <Link to="/forgot-password" className=" text-gray-03 text-sm font-bold">Forgot Password</Link>
-            </div>
-            </div>
-            </>
           )}
         </div>
         {/* link end */}
