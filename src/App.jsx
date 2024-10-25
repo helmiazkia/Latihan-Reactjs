@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
 import ErrorRoute from "./pages/errorRoute";
-import ForgotPassword from "./pages/ForgotPassword";  // Changed to uppercase F
+import ForgotPassword from "./pages/ForgotPassword";  
 
 const App = () => {
   const myRouter = createBrowserRouter([
@@ -21,7 +21,7 @@ const App = () => {
     },
     {
       path: "/forgot-password",
-      element: <ForgotPassword/>  // Changed to uppercase F
+      element: <ForgotPassword/> 
     },
   ]);
 
