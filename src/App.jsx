@@ -3,12 +3,13 @@ import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
 import ErrorRoute from "./pages/errorRoute";
 
+
 const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
       element: <div>Halaman Utama</div>,
-      errorElement: <ErrorRoute/ >,
+      errorElement: <ErrorRoute/ >
     },
     {
       path: "/login",
