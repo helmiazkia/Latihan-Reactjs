@@ -9,11 +9,11 @@ const App = () => {
     {
       path: "/",
       element: <div>Halaman Utama</div>,
-      errorElement: <ErrorRoute />
+      errorElement: <ErrorRoute/>
     },
     {
       path: "/login",
-      element: <SignInPage />,
+      element: <SignInPage/>,
     },
     {
       path: "/register",
@@ -21,7 +21,7 @@ const App = () => {
     },
     {
       path: "/forgot-password",
-      element: <ForgotPassword />  // Changed to uppercase F
+      element: <ForgotPassword/>  // Changed to uppercase F
     },
   ]);
 
