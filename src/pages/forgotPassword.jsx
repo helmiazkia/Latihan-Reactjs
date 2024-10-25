@@ -3,9 +3,9 @@ import AuthLayout from "../components/Layouts/AuthLayout";
 
 const ForgotPassword = () => {
   return(
-    <AuthLayout type= "forgot-password">
+    <AuthLayout type="forgot-password">
       <FormForgotPassword/>
-      </AuthLayout>
+    </AuthLayout>
   );
 };
 
