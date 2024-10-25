@@ -2,7 +2,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
 import ErrorRoute from "./pages/errorRoute";
+import forgotPassword from "./pages/forgotPassword";
 import ForgotPassword from "./pages/forgotPassword";
+
 
 
 const App = () => {
@@ -10,7 +12,7 @@ const App = () => {
     {
       path: "/",
       element: <div>Halaman Utama</div>,
-      errorElement: <ErrorRoute/>
+      errorElement: <ErrorRoute/ >
     },
     {
       path: "/login",
@@ -18,11 +20,11 @@ const App = () => {
     },
     {
       path: "/register",
-      element: <SignUpPage />,
+      element: <SignUpPage/>,
     },
     {
       path: "/forgot-password",
-      element: <ForgotPassword/> 
+      element: <ForgotPassword/>
     },
   ]);
 
@@ -32,5 +34,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;
