@@ -24,8 +24,8 @@ const GoalsPage = () => {
           <Card desc="" />
           <Card desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
           <Card desc="" />
-          <Card desc="" />
           <Card desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
+          <Card desc="" />
         </div>
       </div>
       {/* Bottom Content End */}
