@@ -21,8 +21,8 @@ const GoalsPage = () => {
       <h2 className="text-gray-500 text-lg mb-4">Expenses Goals by Category</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card desc="" />
-          <Card desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
           <Card desc="" />
+          <Card desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
           <Card desc="" />
           <Card desc="" />
           <Card desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
