@@ -19,7 +19,7 @@ const Card = (props) => {
                 </>
             )}
             
-            <div className="bg-white rounded-lg px-6 py-5 shadow-xl">
+            <div className="bg-white rounded-lg px-6 py-5 shadow-xl h-full">
                 {desc}
             </div>
         </div>
