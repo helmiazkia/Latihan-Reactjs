@@ -6,6 +6,7 @@ import ForgotPassword from "./pages/forgotPassword";
 import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
 import GoalsPage from "./pages/goals";
+import ExpensesPage from "./pages/expenses";
 
 
 
@@ -36,6 +37,10 @@ const App = () => {
     {
       path: "/goals",
       element: <GoalsPage/>,
+    },
+    {
+      path: "/expenses",
+      element: <ExpensesPage/>
     },
   ]);
 

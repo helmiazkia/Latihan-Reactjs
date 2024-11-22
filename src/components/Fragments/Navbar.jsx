@@ -87,7 +87,7 @@ const Navbar = () => {
             <img src="images/profile.png" alt="Profile" />
           </div>
           <div className="hidden sm:block">
-            <div className="text-white font-bold">Username</div>
+            <div className="text-white font-bold">Helmi Azkia</div>
             <div className="text-xs">View Profile</div>
           </div>
           <div className="hidden sm:block self-center justify-end">
