@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "../components/Elements/Card";
 import { Icon } from "../components/Elements/Icon";
 import MainLayout from "../components/Layouts/MainLayout";
@@ -6,7 +7,22 @@ import expensesBreakdowns from "../data/expense";
 import transactions from "../data/transaction";
 
 const DashboardPage = () => {
-  const tabs = ["A11", "Revenue", "Expense"];
+
+  const tabs = ["All", "Revenue", "Expense"];
+
+  const [trxs, setTrx] = useState(transactions);
+  const [activeTab, setActiveTab] = useState("All");
+
+  function handleClick(e) {
+
+    const transactionFiltered = 
+      e.target.value != "All"
+        ? transactions.filter(({type}) => type == e.target.value)
+        : transactions;
+
+    setActiveTab(e.target.value);
+    setTrx(transactionFiltered);
+  }
 
   const billCard = bills.map((bill) => (
     <div key={bill.id} className="lg:flex justify-between pt-3 pb-3">
@@ -16,7 +32,7 @@ const DashboardPage = () => {
           <span className="text-2xl font-bold">{bill.date}</span>
         </div>
         <div className="">
-          <img className="h-6" src={`/images/${bill.logo}`} />
+        <img className="h-6" src={`/images/${bill.logo}`} />
           <span className="font-bold">{bill.name}</span>
           <br />
           <span className="text-xs">Last Charge - {bill.lastCharge}</span>
@@ -29,7 +45,6 @@ const DashboardPage = () => {
       </div>
     </div>
   ));
-
   const expenseCard = expensesBreakdowns.map((expensesBreakdown) => (
     <div key={expensesBreakdown.id} className="flex pb-4 justify-between">
       <div className="flex">
@@ -49,12 +64,11 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="flex place-content-center flex-col me-8">
-        {/* <Icon.ArrowRight /> */}
+        <Icon.ArrowRight />
       </div>
     </div>
   ));
-
-  const transactionCard = transactions.map((transaction) => (
+  const transactionCard = trxs.map((transaction) => (
     <div key={transaction.id} className="flex justify-between my-6">
       <div className="flex">
         <div className="bg-special-bg px-3 rounded-lg flex flex-col place-content-center">
@@ -77,46 +91,51 @@ const DashboardPage = () => {
       </div>
     </div>
   ));
+
   return (
     <MainLayout type="dashboard">
       {/* top content start*/}
-      <div className="md:grid md:grid-cols-3 md:gap-x-6">
+      <div className="md:grid md:grid-cols-3 md:gap-6">
         <Card title="Total Balance" />
-        <Card title="Goals" />
-        <Card
-          title="Upcoming Bill"
-          desc={
-            <div className="h-full flex flex-col justify-around">
-              {billCard}
-            </div>
-          }
+        <Card 
+            title="Goals"
+            desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae earum ex doloribus, tenetur optio iusto exercitationem reprehenderit distinctio minus nam delectus ab ea asperiores fugiat cupiditate? Blanditiis doloremque nam aliquam!" 
         />
-        <Card
-          variant="md:col-span-1 md:row-span-2"
-          title="Recent Transaction"
-          desc={
-            <div>
-              <div className="mb-4">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab}
-                    className="px-3 font-bold text-gray-01"
-                    value={tab}
-                  >
-                    {tab}
-                  </button>
-                ))}
+        <Card title="Upcoming Bill" desc={billCard} /> 
+      </div>
+      <div className="md:grid md:grid-cols-3 md:gap-6">
+
+        <div className="md:col-span-1">
+          <Card 
+            title="Recent Transaction"
+            desc={
+              <div>
+                <div className="mb-4">
+                  {tabs.map((tab) => (
+                    <button 
+                      key={tab} 
+                      className = {
+                        activeTab == tab
+                          ? "px-3 font-bold border-b-4 border-primary text-primary"
+                          : "px-3 font-bold text-gray-01"
+                      }
+                      value={tab}
+                      onClick={handleClick}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </div>
+                {transactionCard}
               </div>
-              {transactionCard}
-            </div>
-          }
-        />
-        <Card variant="md:col-span-2" title="Statistics" />
-        <Card
-          variant="md:col-span-2"
-          title="Expenses Breakdown"
-          desc={<div className="lg:grid lg:grid-cols-3">{expenseCard}</div>}
-        />
+            }
+         />
+        </div>
+        <div className="md:col-span-2 flex flex-col flex-1">
+          <Card title="Statistics" />
+          <Card title="Expenses Breakdown" 
+          desc={<div className="lg:grid lg:grid-cols-3">{expenseCard}</div>}/>
+        </div>
       </div>
       {/* bottom content end*/}
     </MainLayout>
@@ -124,3 +143,5 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
+
+
