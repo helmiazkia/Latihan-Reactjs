@@ -1,9 +1,8 @@
-import { useState } from "react";
 import Card from "../components/Elements/Card";
+import { Icon } from "../components/Elements/Icon";
 import MainLayout from "../components/Layouts/MainLayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
-import { Icon } from "../components/Elements/Icon";
 const DashboardPage = () => {
   const billCard = bills.map((bill) => (
     <div key={bill.id} className="lg:flex justify-between pt-3 pb-3">
@@ -46,11 +45,11 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="flex place-content-center flex-col me-8">
-        <Icon.Arrowround />
+        <Icon.ArrowRight />
       </div>
     </div>
   ));
-
+ 
   return (
     <MainLayout type="dashboard">
       {/* top content start*/}
