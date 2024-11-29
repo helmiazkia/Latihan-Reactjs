@@ -26,7 +26,7 @@ const Navbar = () => {
       id: "bill",
       link: "/bill",
       icon: <Icon.Bill />,
-      label: "Bill",
+      label: "Bills",
     },
     {
       id: "expenses",
@@ -38,7 +38,7 @@ const Navbar = () => {
       id: "goals",
       link: "/goals",
       icon: <Icon.Goal/>,
-      label: "Goal",
+      label: "Goals",
     },
     {
       id: "setting",
