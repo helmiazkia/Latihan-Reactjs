@@ -45,7 +45,7 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="flex place-content-center flex-col me-8">
-        <Icon.ArrowRight />
+        <Icon.ArrowRight/> 
       </div>
     </div>
   ));
