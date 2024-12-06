@@ -1,5 +1,5 @@
 import { useState } from "react";
-import transactions from "../../../data/transactions";
+import transactions from "../../../data/transaction";
 import Card from "../../Elements/Card";
 
 const CardTransaction = () => {

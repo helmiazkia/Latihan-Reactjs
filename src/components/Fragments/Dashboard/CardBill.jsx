@@ -36,4 +36,4 @@ const CardBill = () => {
     )
 }
 
-export default CardBill
+export default CardBill;

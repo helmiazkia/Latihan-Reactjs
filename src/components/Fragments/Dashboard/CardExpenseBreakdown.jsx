@@ -1,4 +1,4 @@
-import expensesBreakdowns from "../../../data/expenses";
+import expensesBreakdowns from "../../../data/expense";
 import Card from "../../Elements/Card";
 import { Icon } from "../../Elements/Icon";
 
@@ -33,4 +33,4 @@ const CardExpenseBreakdown = () => {
     )
 }
 
-export default CardExpenseBreakdown
+export default CardExpenseBreakdown;
