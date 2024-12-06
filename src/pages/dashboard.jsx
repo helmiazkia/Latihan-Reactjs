@@ -5,6 +5,7 @@ import CardExpenseBreakdown from "../components/Fragments/Dashboard/CardExpenseB
 import CardTransaction from "../components/Fragments/Dashboard/CardTransaction";
 import CardBalance from "../components/Fragments/Dashboard/CardBalance";
 import CardStatistic from "../components/Fragments/Dashboard/CardStatistic";
+import CardGoal from "../components/Fragments/Dashboard/CardGoal";
 
 
 
@@ -14,7 +15,7 @@ const DashboardPage = () => {
       {/* top content start*/}
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
         <CardBalance/>
-        <Card title="Goals" />
+        <CardGoal/>
         <CardBill />
         <CardTransaction />
         <CardStatistic/>
