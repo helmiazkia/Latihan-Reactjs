@@ -64,7 +64,7 @@ const Navbar = () => {
       <nav className="sticky top-0 text-special-bg2 sm:w-72 w-28 min-h-screen px-7 py-12 flex flex-col justify-between">
         <div>
           <NavLink to="/" className="flex justify-center mb-10">
-            <Logo variant="text-white text-sm sm:text-2xl" />
+            <Logo variant="text-primary text-sm sm:text-2xl" />
           </NavLink>
           {menus.map((menu) => (
             <NavLink
