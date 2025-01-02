@@ -1,6 +1,6 @@
 import accounts from "../../../data/accounts";
 import Card from "../../Elements/Card";
-import Stepper from "../../Elements/Steper";
+import Stepper from "../../Elements/Stepper";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Elements/Icon";
 import { useContext } from "react";
