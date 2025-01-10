@@ -15,7 +15,7 @@ export default function CustomizedSnackbars(props) {
         }}
       >
         <Alert severity={severity} variant="filled" sx={{ width: "100%" }}>
-          {message}
+          <span className="text-lg">{message}</span>
         </Alert>
       </Snackbar>
     </div>
