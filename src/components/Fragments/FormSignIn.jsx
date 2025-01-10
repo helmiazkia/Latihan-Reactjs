@@ -3,16 +3,17 @@ import CheckBox from "../Elements/CheckBox";
 import LabeledInput from "../Elements/LabeledInput";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import CustomizedSnackbars from "../Elements/SnackBar";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
+import { NotifContext } from "../../context/notifContext";
 
 const FormSignIn = () => {
-  const [msg, setMsg] = useState("");
-  const [open, setOpen] = useState(false); // Default harus false
-  const { setIsLoggedIn, setName } = useContext(AuthContext); // Context diperbaiki
+  const { setMsg, setOpen, setIsLoading } = useContext(NotifContext);
+  const { setIsLoggedIn, setName } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const {
@@ -35,19 +36,20 @@ const FormSignIn = () => {
         }
       );
 
-      const decoded = jwtDecode(response.data.refreshToken); // Import diperbaiki
-      console.log(decoded);
-
+      setIsLoading(false);
       setOpen(true);
-      setMsg({ severity: "success", desc: "Login Success" }); // Perbaikan typo
-
-      localStorage.setItem("refreshToken", response.data.refreshToken);
+      setMsg({ severity: "success", desc: "Login Success" });
 
       setIsLoggedIn(true);
+      localStorage.setItem("refreshToken", response.data.refreshToken);
+
+      const decoded = jwtDecode(response.data.refreshToken);
       setName(decoded.name);
 
       navigate("/");
     } catch (error) {
+      setIsLoading(false);
+
       if (error.response) {
         setOpen(true);
         setMsg({ severity: "error", desc: error.response.data.msg });
@@ -67,7 +69,7 @@ const FormSignIn = () => {
             ...register("email", {
               required: "Email address is required",
               pattern: {
-                value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, // Regex diperbaiki
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, // Regex diperbaiki
                 message: "Invalid email address format",
               },
             }),
@@ -97,24 +99,13 @@ const FormSignIn = () => {
         <CheckBox label="Keep me signed in" name="status" />
       </div>
       <Button
-        variant={
-          !isValid
-            ? "bg-gray-05 w-full text-white"
-            : "bg-primary w-full text-white"
-        }
+        variant={`${!isValid ? "bg-gray-05" : "bg-primary zoom-in"}
+                w-full text-white`}
         type="submit"
-        disabled={!isValid} // Properti disabled diperbaiki
+        disable={!isValid ? "disable" : ""}
       >
         Login
       </Button>
-      {msg && (
-        <CustomizedSnackbars
-          severity={msg.severity}
-          message={msg.desc}
-          open={open}
-          setOpen={setOpen}
-        />
-      )}
     </form>
   );
 };
