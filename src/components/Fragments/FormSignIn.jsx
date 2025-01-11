@@ -27,6 +27,7 @@ const FormSignIn = () => {
   const onErrors = (errors) => console.error(errors);
 
   const onFormSubmit = async (data) => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         "https://jwt-auth-eight-neon.vercel.app/login",
