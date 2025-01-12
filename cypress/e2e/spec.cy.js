@@ -4,6 +4,15 @@ describe("User login", () => {
 
     cy.url().should("include", "/login");
 
+    // Klik tombol untuk mengaktifkan mode gelap
+    cy.get("button")
+      .contains("Switch to Dark Mode")
+      .should("be.visible")
+      .click();
+
+    
+
+    // Lanjutkan pengujian login
     cy.get("input#email")
       .should("be.visible")
       .should("have.attr", "placeholder", "hello@example.com")
@@ -18,8 +27,9 @@ describe("User login", () => {
 
     cy.get("button").contains("Login").click();
 
-    cy.get("nav");
-    cy.get("header");
+    // Verifikasi halaman setelah login
+    cy.get("nav").should("be.visible");
+    cy.get("header").should("be.visible");
     cy.wait(5000);
   });
 
@@ -28,6 +38,13 @@ describe("User login", () => {
 
     cy.url().should("include", "/login");
 
+    // Klik tombol untuk mengaktifkan mode gelap
+    cy.get("button")
+      .contains("Switch to Dark Mode")
+      .should("be.visible")
+      .click();
+
+    // Lanjutkan pengujian login
     cy.get("input#email")
       .should("be.visible")
       .should("have.attr", "placeholder", "hello@example.com")
@@ -42,6 +59,7 @@ describe("User login", () => {
 
     cy.get("button").contains("Login").click();
 
-    cy.get("div").contains("Wrong Password");
-  }); 
+    // Verifikasi pesan kesalahan
+    cy.get("div").contains("Wrong Password").should("be.visible");
+  });
 });

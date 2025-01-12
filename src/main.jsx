@@ -1,19 +1,25 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { ThemeContextProvider } from "./context/themeContext.jsx";
 import { AuthContextProvider } from "./context/authContext.jsx";
 import { NotifContextProvider } from "./context/notifContext.jsx";
+import { DarkModeProvider } from "./context/darkModeContext.jsx"; // DarkModeProvider is globally wrapping
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+// Inisialisasi root React
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <StrictMode>
     <AuthContextProvider>
       <NotifContextProvider>
         <ThemeContextProvider>
-          <App />
+          <DarkModeProvider>  {/* DarkModeProvider wraps the entire app */}
+            <App />
+          </DarkModeProvider>
         </ThemeContextProvider>
       </NotifContextProvider>
     </AuthContextProvider>
-  </React.StrictMode>
+  </StrictMode>
 );

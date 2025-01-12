@@ -5,25 +5,31 @@ import { NotifContext } from "../../context/notifContext";
 import SimpleBackdrop from "../Elements/Backdrop";
 import CustomizedSnackbars from "../Elements/SnackBar";
 import * as motion from "motion/react-client";
+import { DarkModeContext } from "../../context/darkModeContext"; // Import DarkModeContext
 
 const AuthLayout = (props) => {
   const { children, type } = props;
   const { msg, setMsg, open, setOpen, isLoading, setIsLoading } =
     useContext(NotifContext);
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext); // darkmode
 
   return (
-    <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
+    <div
+      className={`flex justify-center min-h-screen items-center ${
+        isDarkMode ? "bg-gray-900" : "bg-special-mainBg"
+      }`}
+    >
       {isLoading && (
-          <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading} />
-        )}
-        {msg && (
-          <CustomizedSnackbars
-            severity={msg.severity}
-            message={msg.desc}
-            open={open}
-            setOpen={setOpen}
-          />
-        )}
+        <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading} />
+      )}
+      {msg && (
+        <CustomizedSnackbars
+          severity={msg.severity}
+          message={msg.desc}
+          open={open}
+          setOpen={setOpen}
+        />
+      )}
       {/* container start */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
@@ -32,9 +38,10 @@ const AuthLayout = (props) => {
           duration: 0.4,
           scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
         }}
-        className="w-full max-w-sm"
+        className={`w-full max-w-sm ${
+          isDarkMode ? "text-white" : "text-gray-900"
+        }`}
       >
-        
         {/* logo start */}
         <Logo />
         {/* logo end */}
@@ -163,6 +170,18 @@ const AuthLayout = (props) => {
             </Link>
           </div>
         )}
+         {/* Dark Mode Toggle Button */}
+         <div className="mt-4 flex justify-center">
+          <button
+          
+            onClick={toggleDarkMode}
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
+              isDarkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-900"
+            }`}
+          >
+            {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          </button>
+        </div>
       </motion.div>
       {/* container end */}
     </div>
